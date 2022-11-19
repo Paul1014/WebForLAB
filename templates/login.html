@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NetMonintor System</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link rel="stylesheet" href="{{ url_for( 'static', filename= 'css/bootstrap.min.css' )}}"  >
+    <link rel="stylesheet" href="{{ url_for( 'static', filename= 'css/login.css' )}}" >
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+  <center>
+	<div class="row">
+		<div class="login_form" id="login_form">
+      <form action="/login" method="post"> 
+        <h1>Web test site</h1>
+        <div class="col-md-12">
+          <input class="form-control" type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="col-md-12">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="col-md-12">
+        <button class="button" name="Loginbtn" type="submit">Login</button> 
+        </div>
+      </form> 
+
+      <p class="fail_alert"> {{ failinfo }}</p>
+		</div>
+
+	</div>
+
+</center>
+</div>
+  </body>
+</html>

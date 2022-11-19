@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NetMonintor System</title>
+        <link rel="stylesheet" href="{{ url_for( 'static', filename= 'css/bootstrap.min.css' )}}"  >
+        <link rel="stylesheet" href="{{ url_for( 'static', filename= 'css/dashboard.css' )}}" >
+        <nav class="menu">
+            <ul id="menu"> 
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href=logout>Logout</a></li>
+            </ul>
+          </nav>
+    </head>
+    <body>
+            <div class="container_fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Devices List</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Devices Name</td>
+                                        <td>IP address</td>
+                                        <td></td>
+                                    </tr>
+                                    {% for device in devices %}
+                                    <tr>
+                                        <td>{{ device.device_id }}</td>
+                                        <td>{{ device.name }}</td>
+                                        <td>{{ device.IP }}</td>
+                                        <td><a href="device/{{ device.device_id  }}">edit</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                                
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-button">
+                                    <a class="button_add" href=device_add >
+                                        <button class="button" name="Add_Devices" type="submit">Add Devices</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    
+                        
+        </div>
+
+    </body>
+
+</html>
